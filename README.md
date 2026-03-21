@@ -1,4 +1,4 @@
-```markdown name=README.md url=https://github.com/xjh22222228/git-manual/blob/main/README.md
+
 <p align="center">
   <img src="media/poster.png" width="300" />
   <br />
