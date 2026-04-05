@@ -896,20 +896,3 @@ git push
 ```
 
 ---
-
-# 🚀 What You Achieved (Git)
-
-You now know:
-
-* ✅ Basics → daily workflow
-* ✅ Troubleshooting → real incidents
-* ✅ Interview → staff-level answers
-
----
-
-## ✅ Next Topic
-
-👉 **01_Linux — SECTION 1: BASICS (deep + structured)**
-
-This will be **much bigger and more powerful than Git**
-
