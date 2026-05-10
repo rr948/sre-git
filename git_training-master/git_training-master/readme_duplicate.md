@@ -50,7 +50,7 @@ Let's get started!
 
 In the picture below you see four boxes. One of them stands alone, while the other three are grouped together in what I'll call your _Development Environment_. 
 
-![git components](SRE-Knowledge-Workspace/00_Git/img/components.png)
+![git components](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/components.png)
 
 We'll start with the one that's on its own though. The _Remote Repository_ is where you send your changes when you want to share them with other people, and where you get their changes from. If you've used other version control systems there's nothing interesting about that. 
 
