@@ -79,7 +79,7 @@ Now you see how git is _distributed_ version control. The _Local Repository_ is 
 
 What `git clone` also does, is create a new folder wherever you called it. There should be a `git_training` folder now. Open it. 
 
-![Cloning the remote repo](img/clone.png)
+![Cloning the remote repo](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/clone.png)
 
 ## Adding new things
 
@@ -93,13 +93,13 @@ To see what's going on in your _Working Directory_ run `git status`, which will 
 You'll see that `Bob.txt` is untracked, and `git status` even tells you how to change that. 
 In the picture below you can see what happens when you follow the advice and execute `git add Bob.txt`: You've added the file to the _Staging Area_, where you collect all the changes you wish to put into _Repository_.
 
-![Adding changes to the staging area](img/add.png)
+![Adding changes to the staging area](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/add.png)
 
 When you have added all your changes (which right now is only adding Bob), you're ready to _commit_ what you just did to the _Local Repository_. 
 
 The collected changes that you _commit_ are some meaningful chunk of work, so when you now run `git commit` a text editor will open and allow you to write a message telling everything what you just did. When you save and close the message file, your _commit_ is added to the _Local Repository_.
 
-![Committing to the local repo](img/commit.png)
+![Committing to the local repo](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/commit.png)
 
 You can also add your _commit message_ right there in the command line if you call `git commit` like this: `git commit -m "Add Bob"`. But because you want to write [good commit messages](https://chris.beams.io/posts/git-commit/) you really should take your time and use the editor.
 
@@ -107,11 +107,11 @@ Now your changes are in your local repository, which is a good place for them to
 
 In order to share your commits with the _Remote Repository_ you need to `push` them. 
 
-![Pushing to the local repo](img/push.png)
+![Pushing to the local repo](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/push.png)
 
 Once you run `git push` the changes will be sent to the _Remote Repository_. In the diagram below you see the state after your `push`.
 
-![State of all components after pushing changes](img/after_push.png)
+![State of all components after pushing changes](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/after_push.png)
 
 ## Making changes
 So far we've only added a new file. Obviously the more interesting part of version control is changing files. 
@@ -213,7 +213,7 @@ We can also do `git diff 8af2ff2a8f7c51e2e52402ecb7332aec39ed540e 87a4ad48d55e52
 
 In the diagram below you again see the different stages of a change and the corresponding diff commands. 
 
-![States of a change an related diff commands](img/diffs.png)
+![States of a change an related diff commands](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/diffs.png)
 
 Now that we're sure we made the change we wanted, go ahead and `git push`. 
 
@@ -253,7 +253,7 @@ In fact the state your _Local Repository_ is currently at, can be viewed as anot
 
 If that sounds complicated the diagrams below will hopefully help clear things up a bit:
 
-![State after adding branch](img/add_branch.png)
+![State after adding branch](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/add_branch.png)
 
 To switch to our new branch you will have to use `git checkout change_alice`. What this does is simply move the _HEAD_ to the branch you specify.
 
@@ -296,7 +296,7 @@ In the diagrams earlier you can see just the local branches you have. You can se
 
 If you want to also see the _remote_ branches your _Local Repository_ knows, you can use `git branch -a` to list all of them.
 
-![Remote and local branches`](img/branches.png)
+![Remote and local branches`](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/branches.png)
 
 Now we can call the suggested `git push --set-upstream origin change_alice`, and `push` the changes on our branch to a new _remote_. This will create a `change_alice` branch on the _Remote Repository_ and set our _local_ `change_alice` to track that new branch. 
 
@@ -327,11 +327,11 @@ In the diagrams below, you can see that this just means that the _master_ pointe
 
 The first diagram shows the state before our `merge`, _master_ is still at the commit it originally was, and on the other branch we've made one more commit. 
 
-![Before fast forward merge](img/before_ff_merge.png)
+![Before fast forward merge](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/before_ff_merge.png)
 
 The second diagram shows what has changed with our `merge`.
 
-![After fast forward merge](img/ff_merge.png)
+![After fast forward merge](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/ff_merge.png)
 
 ### Merging divergent branches
 
@@ -343,11 +343,11 @@ Then `git checkout change_alice`, change `Alice.txt` and commit.
 
 In the diagram below you see how our commit history now looks. Both _master_ and `change_alice` originated from the same commit, but since then they _diverged_, each having their own additional commit. 
 
-![Divergent commits](img/branches_diverge.png)
+![Divergent commits](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/branches_diverge.png)
 
 If you now switch back to master (`git checkout master`) and do `git merge change_alice` a fast-forward merge is not possible. Instead your favorite text editor will open and allow you to change the message of the `merge commit` git is about to make in order to get the two branches back together. You can just go with the default message right now. The diagram below shows the state of our git history after we the `merge`.
 
-![Merging branches](img/merge.png)
+![Merging branches](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/merge.png)
 
 The new commit introduces the changes that we've made on the `change_alice` branch into master. 
 
@@ -433,7 +433,7 @@ When you've added a commit to the branch, get back to _master_, make a change an
 
 Like in our merging example the history of these two branches diverges at a common ancestor as you can see in the diagram below. 
 
-![History before a rebase](img/before_rebase.png)
+![History before a rebase](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/before_rebase.png)
 
 Now let's `checkout add_patrick` again, and get that change that was made on _master_ into the branch we are working on! 
 
@@ -462,7 +462,7 @@ In fact the _0cfc1d2_ commit is gone, and the `add_patrick` branch starts with a
 We made it look, like our `add_patrick` was based on the current _master_ not an older version of it, but in doing so we re-wrote the history of the branch.  
 At the end of this tutorial we'll learn a bit more about re-writing history and when it's appropriate and inappropriate to do so. 
 
-![History after rebase](img/rebase.png)
+![History after rebase](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/rebase.png)
 
 `Rebase` is an incredibly powerful tool when you're working on your own development branch which is based on a shared branch, e.g. the _master_. 
 
@@ -491,11 +491,11 @@ That fits what you'll do if you're just working on your own, but usually there'l
 
 Because it has been a while, lets have another look at the components of git: 
 
-![git components](img/components.png)
+![git components](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/components.png)
 
 Just like your _Dev Environment_ everyone else working on the same source code has theirs. 
 
-![many dev environments](img/many_dev_environments.png)
+![many dev environments](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/many_dev_environments.png)
 
 All of these _Dev Environments_ have their own _working_ and _staged_ changes, that are at some point `committed` to the _Local Repository_ and finally `pushed` to the _Remote_. 
 
@@ -505,7 +505,7 @@ Go to your `fork` of this repo on [github.com](https://www.github.com) and open 
 
 Find the edit button, make a change, and commit it via the website. 
 
-![github edit](img/github.png) 
+![github edit](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/github.png) 
 
 In this repository I have added a remote change to `Alice.txt` on a branch called `fetching_changes_sample`, but in your version of the repository you can of course just change the file on `master`.
 
@@ -519,7 +519,7 @@ This gets any changes on the remote - both commits and branches - into your _Loc
 
 Note that at this point, changes aren't integrated into the local branches and thus the _Working Directory_ and _Staging Area_ yet.
 
-![Fetching changes](img/fetch.png)
+![Fetching changes](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/fetch.png)
 
 If you run `git status` now, you'll see another great example of git commands telling you exactly what is going on: 
 
@@ -537,7 +537,7 @@ As we have no _working_ or _staged_ changes, we could just execute `git pull` no
 > Pulling will implicitly also `fetch` the _Remote Repository_, but sometimes it is a good idea to do a `fetch` on its own. 
 > For example when you want to synchronize any new _remote_ branches, or when you want to make sure your _Local Repository_ is up to date before you do a `git rebase` on something like `origin/master`.
 
-![Pulling in changes](img/pull.png)
+![Pulling in changes](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/pull.png)
 
 Before we `pull`, lets change a file locally to see what happens. 
 
@@ -661,7 +661,7 @@ As you can see, a new commit with the changes we wanted shows up on branch.
 
 The figure below visualizes `cherry-pick`ing a range of commits instead of a single one. You can simply do that by calling the command in the form `git cherry-pick <from>..<to>` or in our example below as `git cherry-pick 0cfc1d2..41fbfa7`.
 
-![Cherry-picking commit range](img/cherry_pick_range.png)
+![Cherry-picking commit range](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/cherry_pick_range.png)
 
 ## Rewriting history
 > I'm repeating myself now, but you still remember [`rebase`](#rebasing) well enough right? Otherwise quickly jump back to that section, before continuing here, as we'll use what we already know while learning how to change history!
@@ -1040,7 +1040,7 @@ You're much better off using `--force`'s more careful sibling `--force-with-leas
 
 By that you can ensure that you don't accidentally wipe any changes someone else may have `push`ed while you where rewriting history!
 
-![What happens in a push --force-with-lease](img/force_push.png)
+![What happens in a push --force-with-lease](./SRE-Knowledge-Workspace/00_Git/git_training-master/git_training-master/img/force_push.png)
 
 
 And on that note I'll leave you with a slightly changed mantra: 
